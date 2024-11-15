@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
+            background-size: 600%, 600%;
+            animation: gradientBackground 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height of the viewport */
+            font-family: Arial, sans-serif;
+            color: #e2e1e1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+            box-sizing: border-box;
+            z-index: 10; /* Ensure it's above other content */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            color: #e2e1e1;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
+        }
+
+
+        header div.contact-info {
+            font-size: 18px;
+            color: #e2e1e1;
+            cursor: pointer;
+        }
+
+        header div.contact-info:hover {
+            text-decoration: underline;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #e2e1e1;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header nav a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: #e2e1e1;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .profile-container {
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .profile-container img {
+            width: 200px;         /* Set the width */
+            height: 200px;        /* Set the height */
+            border-radius: 50%;   /* Make it circular */
+            object-fit: cover;    /* Maintain the aspect ratio and crop the image to fit the container */
+            margin-bottom: 20px;  /* Space below the image */
+        }
+
+        .profile-container h2 {
+            margin: 10px 0;
+            font-size: 30px;
+        }
+
+        .profile-container p {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #e2e1e1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e2e1e1;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            header nav {
+                display: none; /* Hide navigation links */
+            }
+
+            .hamburger {
+                display: block; /* Show hamburger menu */
+            }
+
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #060653;
+                padding: 10px;
+                border-radius: 5px;
+                gap: 10px;
+            }
+
+            .menu-active nav a {
+                margin: 10px 0;
+            }
+
+            body {
+                padding-top: 80px; /* Adjust space for hamburger visibility */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
+
+        <!-- Hamburger menu icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <a href="index.html">Home Page</a>
+            <a href="about.html">About</a>
+            <a href="articles.html">Articles</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <img src="images/profile picture.png" alt="Profile Picture">
+        <h2>Mabo Giqwa</h2>
+        <p>Mathematics and Computer Science student</p>
+        <p>Aspiring ML engineer</p>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/mabo-giqwa-7880522b5/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/numerous-kin0" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        Stay curious, stay inspired
+    </footer>
+
+    <!-- JavaScript for menu and contact info -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('header').classList.toggle('menu-active');
+        }
+
+        function showEmail() {
+            alert("Email: mabo.giqwa.cs@gmail.com");
+        }
+    </script>
+</body>
+</html>
+

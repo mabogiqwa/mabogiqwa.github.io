@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            @keyframes gradientBackground {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            body {
+                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
+                background-size: 600%, 600%;
+                animation: gradientBackground 15s ease infinite;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                color: #e2e1e1;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.5);
+                box-sizing: border-box;
+                z-index: 10;
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                font-size: 18px;
+                color: #e2e1e1;
+                background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
+            }
+
+            header div.contact-info {
+                font-size: 18px;
+                color: #e2e1e1;
+                cursor: pointer;
+            }
+
+            header div.contact-info:hover {
+                text-decoration: underline;
+            }
+
+            header nav {
+                display: flex;
+                gap: 20px;
+            }
+
+            header nav a {
+                color: #e2e1e1;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            header nav a:hover {
+                color: #ccc;
+                text-decoration: underline;
+            }
+
+            .hamburger {
+                display: none;
+                font-size: 30px;
+                color: #e2e1e1;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            .table-of-contents ul ul {
+                padding-left: 20px;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                padding-left: 20px;
+                text-align: left;
+                position: relative;
+                top: 590px;
+            }
+
+            #skills ul {
+                padding-left: 20px;
+            }
+
+            #skills li {
+                margin-bottom: 10px;
+            }
+
+            #education ul {
+                padding-left: 20px;
+            }
+
+            #education li {
+                margin-bottom: 10px;
+            }
+
+            .courses {
+                list-style-type: none;
+                padding-left: 20px;
+            }
+
+            .courses > li {
+                margin-bottom: 20px;
+            }
+
+            .course-list {
+                list-style-type: circle;
+                margin-left: 20px;
+            }
+
+            .course-list li {
+                margin: 10px;
+            }
+
+            @media (max-width: 768px) {
+                header nav {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: block;
+                }
+
+                .menu-active nav {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px;
+                    right: 20px;
+                    background-color: #060653;
+                    padding: 10px;
+                    border-radius: 5px;
+                    gap: 10px;
+                }
+
+                .menu-active nav a {
+                    margin: 10px 0;
+                }
+
+                body {
+                    padding-top: 80px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="contact-info" onclick="showEmail()">Contact Information</div>
+    
+            <!-- Hamburger menu icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <nav>
+                <a href="index.html">Home Page</a>
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h1>About</h1>
+            
+            <section class="table-of-contents">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li><strong>Professional Working:</strong> Python, C++, Javascript</li>
+                    <li><strong>Familiar with:</strong> HTML, CSS, MATLAB, R, LaTex, Java, C, Tensorflow, Scikit-Learn</li>
+                    <li><strong>Soft Skills:</strong> Time Management, Communication, Attention to Detail, Adaptability</li>
+                </ul>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <ul>
+                    <li><strong>Majors:</strong> Mathematics and Computer Science</li>
+                    <li><strong>Faculty:</strong> College of Science, Engineering, and Technology</li>
+                    <li><strong>University:</strong> University of South Africa (UNISA)</li>
+                    <li><strong>Country:</strong> South Africa</li>
+                    <li><strong>Period:</strong> 2022 - 2026</li>
+                </ul>
+            </section>
+
+            <section id="courses">
+                <h2>Course List</h2>
+                <ul class="courses">
+                    <li>
+                        <strong>2022 academic year</strong>
+                        <ul class="course-list">
+                            <li> Calculus A</li>
+                            <li> Calculus B</li>
+                            <li> Linear Algebra I </li>
+                            <li> Theoretical Computer Science I</li>
+                            <li> Introduction to Programming I</li>
+                            <li> Introduction to Programming II</li>
+                            <li> Computer Systems: Fundamental Concepts</li>
+                            <li> Ethical Information and Communication Technologies</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>2023 academic year</strong>
+                        <ul class="course-list">
+                            <li>Differential Equations</li>
+                            <li>Numerical Methods I</li>
+                            <li>Calculus in Higher Dimensions</li>
+                            <li>Introduction to Discrete Mathematics</li>
+                            <li>Theoretical Computer Science II</li>
+                            <li>Programming: Data Structures</li>
+                            <li>Programming: Contemporary Concepts</li>
+                            <li>Formal Logic II</li>
+                            <li>Philosophy of Science</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>2024 academic year</strong>
+                        <ul class="course-list">
+                            <li>Ordinary Differential Equations</li>
+                            <li>Numerical Methods II</li>
+                            <li>Linear Algebra II</li>
+                            <li>Real Analysis I</li>
+                            <li>Theoretical Computer Science III</li>
+                            <li>Formal Logic III</li>
+                            <li>Operating Systems and Architecture</li>
+                            <li>Techniques of Artificial Intelligence</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>2025 academic year</strong>
+                        <ul class="course-list">
+                            <li>Discrete Mathematics II</li>
+                            <li>Linear Algebra III</li>
+                            <li>Complex Analysis</li>
+                            <li>Real Analysis II</li>
+                            <li>Advanced Programming</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li><strong>Python for Data Science, AI and Development:(</strong><a href="https://www.coursera.org/account/accomplishments/verify/4H87F8QAN2U6" target="_blank">View Certificate</a>) - Coursera - November 2023</li>
+                </ul>
+                <ul>
+                    <li><strong>Introduction to Cloud Computing:(</strong><a href="https://www.coursera.org/account/accomplishments/verify/QHC897ZFYG2W" target="_blank">View Certificate</a>) - Coursera - December 2023</li>
+                </ul>
+                <ul>
+                    <li><strong>Build Deep Learning Models with Tensor Flow:(</strong><a href="https://www.codecademy.com/profiles/mabogee03/certificates/5f85c4b9c431a800138a60e0" target="_blank">View Certificate</a>) - Codecademy - September 2024</li>
+                </ul>
+                <ul>
+                    <li><strong>Learn Javascript:(</strong><a href="https://www.codecademy.com/profiles/mabogee03/certificates/705dcb15de0da4dd9d9fc4f3274b430e" target="_blank">View Certificate</a>) - Codecademy - July 2024</li>
+                </ul>
+            </section>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                document.body.classList.toggle('menu-active');
+            }
+    
+            function showEmail() {
+                alert("Your email is: mabo.giqwa.cs@gmail.com");
+            }
+        </script>
+    </body>
+</html>
+
