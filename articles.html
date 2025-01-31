@@ -135,6 +135,16 @@
                 margin: 10px;
             }
 
+            #blog {
+                position: absolute;
+                top: 70px;
+                left: 20px;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 15px;
+                border-radius: 10px;
+                color: #e2e1e1;
+            }
+
             @media (max-width: 768px) {
                 header nav {
                     display: none;
@@ -182,7 +192,12 @@
                 <a href="projects.html">Projects</a>
             </nav>
         </header>
-        <p>Still cooking up some ideas....</p>
+        <section id="blog">
+            <h2>Latest Blog Posts</h2>
+            <ul>
+                <li><a href="articles/article1.html">Linear Algebra in Deep Learning</a></li>
+            </ul>
+        </section>
 
         <script>
             function toggleMenu() {
