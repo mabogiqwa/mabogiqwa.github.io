@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra in Deep Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .italic-variable {
+            font-family: 'Roboto Flex', sans-serif;
+            font-style: italic;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #ccc;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #4CAF50;
+            width: 0%;
+        }
+
+        .toc {
+            background: #f4f4f4;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .toc a {
+            display: block; 
+            text-decoration: none;
+            color: #333;
+            padding: 5px 0;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        header {
+            background-color: #2B2B87;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #060653;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2B2B87;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Linear Algebra in Deep Learning
+    </header>
+    <div class="container">
+        <h1>Introduction</h1>
+        <p>Linear Algebra is a form of continuous rather than a discrete mathematics. This field of mathematics deals with vectors, matrices, vector spaces, and linear transformations.</p>
+        
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <a href="#scalars">1. Scalars, Vectors, Matrices, and Tensors</a>
+            <a href="#multiplication">2. Multiplying Matrices and Vectors</a>
+            <a href="#identity-inverse">3. Identity and Inverse Matrices</a>
+            <a href="#dependence-span">4. Linear Dependence and Span</a>
+            <a href="#norms">5. Norms</a>
+            <a href="special-matrices">6. Special Kinds of Matrices and Vectors</a>
+            <a href="eigendecomposition">7. Eigendecomposition</a>
+            <a href="#determinant">8. The Determinant</a>
+        </div>
+        
+        <section id="scalars">
+            <h2>Scalars, Vectors, Matrices, and Tensors</h2>
+            <p>A scalar can be viewed as a real number. Scalars are written in italics. We also denote them in lowercase variable style forms. For example, let \(s \in \mathbb{R} \)</p>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script>
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <footer>
+        &copy; 2025 Mabo Giqwa | All rights reserved.
+    </footer>
+</body>
+</html>
