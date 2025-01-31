@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            @keyframes gradientBackground {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            body {
+                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
+                background-size: 600%, 600%;
+                animation: gradientBackground 15s ease infinite;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                color: #e2e1e1;
+            }
+
+            #blog {
+                position: absolute;
+                top: 70px;
+                left: 20px;
+                background: rgba(0,0,0,0.5);
+                padding: 15px;
+                border-radius: 8px;
+                color: #e2e1e1;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.5);
+                box-sizing: border-box;
+                z-index: 10;
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                font-size: 18px;
+                color: #e2e1e1;
+                background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
+            }
+
+            header div.contact-info {
+                font-size: 18px;
+                color: #e2e1e1;
+                cursor: pointer;
+            }
+
+            header div.contact-info:hover {
+                text-decoration: underline;
+            }
+
+            header nav {
+                display: flex;
+                gap: 20px;
+            }
+
+            header nav a {
+                color: #e2e1e1;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            header nav a:hover {
+                color: #ccc;
+                text-decoration: underline;
+            }
+
+            .hamburger {
+                display: none;
+                font-size: 30px;
+                color: #e2e1e1;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            .table-of-contents ul ul {
+                padding-left: 20px;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                padding-left: 20px;
+                text-align: left;
+                position: relative;
+                top: 590px;
+            }
+
+            #skills ul {
+                padding-left: 20px;
+            }
+
+            #skills li {
+                margin-bottom: 10px;
+            }
+
+            #education ul {
+                padding-left: 20px;
+            }
+
+            #education li {
+                margin-bottom: 10px;
+            }
+
+            .courses {
+                list-style-type: none;
+                padding-left: 20px;
+            }
+
+            .courses > li {
+                margin-bottom: 20px;
+            }
+
+            .course-list {
+                list-style-type: circle;
+                margin-left: 20px;
+            }
+
+            .course-list li {
+                margin: 10px;
+            }
+
+            @media (max-width: 768px) {
+                header nav {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: block;
+                }
+
+                .menu-active nav {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px;
+                    right: 20px;
+                    background-color: #060653;
+                    padding: 10px;
+                    border-radius: 5px;
+                    gap: 10px;
+                }
+
+                .menu-active nav a {
+                    margin: 10px 0;
+                }
+
+                body {
+                    padding-top: 80px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="contact-info" onclick="showEmail()">Contact Information</div>
+    
+            <!-- Hamburger menu icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <nav>
+                <a href="index.html">Home Page</a>
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </header>
+        <section id="blog">
+            <h2>Latest Blog Posts</h2>
+            <ul>
+                <li><a href="articles/article1.html">Linear Algebra in Deep Learning</a></li>
+            </ul>
+        </section>
+
+        <script>
+            function toggleMenu() {
+                document.body.classList.toggle('menu-active');
+            }
+    
+            function showEmail() {
+                alert("Your email is: mabo.giqwa.cs@gmail.com");
+            }
+        </script>
+    </body>
+</html>

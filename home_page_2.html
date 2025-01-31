@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #e2e1e1;
+            overflow: hidden; /* Prevents overflow from star particles */
+            position: relative;
+            background: url('https://example.com/milkyway-image.jpg') no-repeat center center fixed; /* Replace with Milky Way image URL */
+            background-size: cover;
+        }
+
+        /* Star particles */
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        /* Random positions for stars */
+        .star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 15%; animation-duration: 1.5s; }
+        .star:nth-child(2) { width: 3px; height: 3px; top: 25%; left: 40%; animation-duration: 2.2s; }
+        .star:nth-child(3) { width: 1px; height: 1px; top: 70%; left: 80%; animation-duration: 3s; }
+        .star:nth-child(4) { width: 4px; height: 4px; top: 50%; left: 70%; animation-duration: 2.8s; }
+        .star:nth-child(5) { width: 3px; height: 3px; top: 30%; left: 60%; animation-duration: 2.4s; }
+        .star:nth-child(6) { width: 2px; height: 2px; top: 60%; left: 80%; animation-duration: 1.6s; }
+        .star:nth-child(7) { width: 2px; height: 2px; top: 90%; left: 40%; animation-duration: 2.2s; }
+        .star:nth-child(8) { width: 3px; height: 3px; top: 80%; left: 30%; animation-duration: 1.9s; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        header div.contact-info {
+            font-size: 18px;
+            color: #e2e1e1;
+            cursor: pointer;
+            text-align: left;
+            margin-left: 160px;
+        }
+
+        header div.contact-info:hover {
+            text-decoration: underline;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+            text-align: right;
+            margin-right: 140px;
+        }
+
+        header nav a {
+            color: #e2e1e1;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header nav a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: #e2e1e1;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            margin-left: auto;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            padding: 10px;
+        }
+
+        .profile-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile-container h2 {
+            margin: 10px 0;
+            font-size: 30px;
+        }
+
+        .profile-container p {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #e2e1e1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e2e1e1;
+        }
+
+        .terminal {
+            background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
+            background-size: 600%, 600%;
+            animation: gradientBackground 15s ease infinite;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin-bottom: 50px;
+            max-width: 600px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            font-size: 1.2rem;
+            color: #eef6ec;
+            position: relative;
+        }
+
+        .cursor {
+            display: inline;
+            animation: blink 0.8s step(2, start) infinite;
+            color: #eef1ed;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            header nav {
+                display: none; /* Hide navigation links */
+            }
+
+            .hamburger {
+                display: block; /* Show hamburger menu */
+            }
+
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #060653;
+                padding: 10px;
+                border-radius: 5px;
+                gap: 10px;
+            }
+
+            .menu-active nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
+
+        <!-- Hamburger menu icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#articles">Articles</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+
+    <div class="terminal">
+        <div class="terminal-content" id="terminalContent"></div>
+        <div class="cursor" id="cursor">|</div>
+    </div>
+
+    <div class="profile-container">
+        <img src="images/profile picture.png" alt="Profile Picture">
+        <h2>Mabo Giqwa</h2>
+        <p>Mathematics and Computer Science student</p>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/mabo-giqwa-7880522b5/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/numerous-kin0" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript for menu and contact info -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('header').classList.toggle('menu-active');
+        }
+
+        function showEmail() {
+            alert("Email: mabo.giqwa.cs@gmail.com");
+        }
+    </script>
+
+    <!-- Adding stars -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+</body>
+</html>
