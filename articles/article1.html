@@ -165,11 +165,12 @@
             <p>Matrix multiplication works iff we have matrices \(A \in \mathbb{R}^{m \times n} \) and \(B \in \mathbb{R}^{n \times p} \). The width of \( A \) must be equal to the height of \(B \) for the product \(AB \) to exist.</p>
             <p>It is possible to add a matrix and a vector which yield another matrix: \(C = A + b \) where \(C_{i,j} = A_{i,j} + b_j \). What happens in this operation is that vector \(b\) is added to each row of matrix <span class="bold-uppercase">A</span>. This operation is termed broadcasting. For instance:</p>
             <div style="text-align: center">
-                <span class="bold-uppercase">A</span> = \(\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix} \) and <span class="bold-lowercase">x</span> = \(\begin{bmatrix} 10 & 20 & 30\end{bmatrix} \)<br>
+                Let \(\hspace{0.3em}\)<span class="bold-uppercase">A</span> = \(\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix} \) and \(\hspace{0.2em} \) <span class="bold-lowercase">x</span> = \(\begin{bmatrix} 10 & 20 & 30\end{bmatrix} \)<br>
                 <br>
                 <span class="bold-uppercase">A</span> + <span class="bold-lowercase">x</span> = \(\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix} \ + \begin{bmatrix} 10 & 20 & 30 \\ 10 & 20 & 30 \\ 10 & 20 & 30\end{bmatrix} = \begin{bmatrix}11 & 22 & 33 \\ 14 & 25 & 36 \\ 17 & 28 & 39\end{bmatrix}\)
             </div>
         </section>
+
 
     </div>
 
