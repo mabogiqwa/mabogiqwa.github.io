@@ -173,6 +173,67 @@
 
          <section id="multiplication">
             <h2>Multiplying Matrices and Vectors</h2>
+            <p>The matrix product of matrices <span class="bold-uppercase">A</span> and <span class="bold-uppercase">B</span> is a third matrix <span class="bold-uppercase">C</span>. 
+                In order for the product to be defined <span class="bold-uppercase">A</span> must have the same number of columns as <span class="bold-uppercase">B</span> has rows. 
+                If we given that <span class="bold-uppercase">A</span> has the shape \(m \times n \) and 
+                <span class="bold-uppercase">B</span> has the shape \(n \times p \), then <span class="bold-uppercase">C</span> has the shape \(m \times p \). The matrix product is written as,
+            </p>
+            <div style="text-align: center">
+                \(C = AB \hspace{3em} \textcolor{red}{(2.1)}\)
+            </div>
+            <p>while the product operation is defined by,</p>
+            <div style="text-align: center">
+                \(C_{i,j} = \sum_{k}A_{i,k}B_{k,j} \hspace{3em} \textcolor{red}{(2.2)}\)
+            </div>
+            <p>An example of matrix multiplication is: </p>
+            <div style="text-align: center">
+                Let \(A = \begin{bmatrix}2 & 3 \\ 4 & 5 \end{bmatrix}\) and \(B = \begin{bmatrix}1 & 2 \\3 & 4 \end{bmatrix}\)<br>
+                <br>
+                \[
+                \begin{aligned}
+                    AB &= \begin{bmatrix}2 & 3 \\ 4 & 5 \end{bmatrix} 
+                         \begin{bmatrix}1 & 2 \\ 3 & 4 \end{bmatrix} \\[8pt]
+                       &= \begin{bmatrix}2 \\ 4 \end{bmatrix} 
+                          \begin{bmatrix}1 & 2 \end{bmatrix} 
+                          + \begin{bmatrix}3 \\ 5 \end{bmatrix} 
+                          \begin{bmatrix}3 & 4 \end{bmatrix} \\[8pt]
+                       &= \begin{bmatrix}2 & 4 \\ 4 & 8\end{bmatrix} 
+                          + \begin{bmatrix}9 & 12 \\ 15 & 20\end{bmatrix} \\[8pt]
+                       &= \begin{bmatrix} 11 & 16 \\ 19 & 28\end{bmatrix}
+                \end{aligned}
+                \]
+            </div>
+            <p>
+                It is important to note that the standard product is not just a matrix that contains the product of individual corresponding elements. If we were to conduct such an operation,
+                it would be called a Hadamard product which is denoted as \(A \odot B \).
+            </p>
+            <p>
+                The dot product between two vector <span class="bold-lowercase">x</span> and <span class="bold-lowercase">y</span> which has the same dimensions is the matrix product \(x^{T}y\).
+            </p>
+            <p>
+                Here are a couple of algebraic axioms related to matrix multiplication:
+            </p>
+            <div style="text-align: center">
+                \[
+                \begin{aligned}
+                    A(B + C) &= AB + AC \hspace{3em} \textcolor{red}{(2.3)} \\
+                    A(BC) &= (AB)C \hspace{4.2em} \textcolor{red}{(2.4)} \\
+                    (AB)^{T} &= B^{T}A^{T} \hspace{4.8em} \textcolor{red}{(2.5)}
+                \end{aligned}
+                \]
+            </div>
+            <p>
+                Remember that \(AB \neq BA \) since matrix multiplication is not commutative. We however have commutativity between the dot product of two vectors. So
+            </p>
+            <div style="text-align: center">
+                \( x^{T}y = y^{T}x \) \(\hspace{3em} \textcolor{red}{(2.6)} \)
+            </div>
+            <p>
+                A system of linear equations is denoted as:
+            </p>
+            <div style="text-align: center">
+                \(\hspace{-5em} Ax = b \)
+            </div>
         </section>
     </div>
 
