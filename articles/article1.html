@@ -237,7 +237,32 @@
                 A system of linear equations is denoted as:
             </p>
             <div style="text-align: center">
-                \(\hspace{-5em} Ax = b \)
+                \(\hspace{-5em} Ax = b \hspace{10em} \textcolor{red}{(2.7)}\)
+            </div>
+            <p>where \(A \in \mathbb{R}^{m \times n}\) is a given matrix, \(b \in \mathbb{R}^{m}\) is a given vector and \(x \in \mathbb{R}^n \) 
+               is the vector of unknown variable we would like to solve for. We would like to find the value for each \(x_i \) in \(x \).<br>
+               We can express \(\textcolor{red}{2.7}\) as:
+            </p>
+            <div style="text-align: center">
+                \[
+                \begin{aligned}
+                    A_{1},:x &= b_{1} \hspace{3em} \textcolor{red}{(2.8)} \\
+                    A_{2},:x &= b_{2} \hspace{3em} \textcolor{red}{(2.9)} \\
+                    \text{. . .} \\
+                    A_{m},:x &= b_{m} \hspace{2.6em} \textcolor{red}{(2.10)}
+                \end{aligned}
+                \]
+            </div>
+            <p>and more compactly as</p>
+            <div style="text-align: center">
+                \[
+                \begin{aligned}
+                    A_{1,1}x_1 + A_{1,2}x_2 + \dots + A_{1,n}x_n &= b_1 \\
+                    A_{2,1}x_1 + A_{2,2}x_2 + \dots + A_{2,n}x_n &= b_2 \\
+                    \dots \hspace{5em} \\
+                    A_{m,1}x_1 + A_{m,2}x_2 + \dots + A_{m,n}x_n &= b_m \\
+                \end{aligned}
+                \]
             </div>
         </section>
     </div>
