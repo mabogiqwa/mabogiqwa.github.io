@@ -265,6 +265,47 @@
                 \]
             </div>
         </section>
+
+        <section id="identity-inverse">
+            <h2>Identity and Inverse Matrices</h2>
+            <p>
+                Matrix inversion allows us to solve linear system in the form \(\textcolor{red}{2.7}\) analytically for many values of <span class="bold-uppercase">A</span>
+                and <span class="bold-lowercase">b</span>.
+            </p>
+            <p>
+                To fully describe matrix inversion, we also need to define the concept of an identity matrix.
+                An identiy matrix is a matrix that does not enact any change to any matrix it is multiplied by. The
+                identity matrix which preserves \(n \)-dimensional vectors is denoted as \(I_n\). \(I_n \in \mathbb{R}^{n}\) and,
+            </p>
+            <div style="text-align: center">
+                \(\forall x \in \mathbb{R}^{n}, I_n x = x\)
+            </div>
+            <p>
+                An identity matrix can be recognized by that beside the main diagonal which has 1, other entries are 0 and further more,
+                it is a square matrix which implies that the width and height of the matrix are equivalent.
+            </p>
+            <p>
+                The inverse of some matrix <span class="bold-uppercase">A</span> is denoted \(A^{-1}\) and the following is true that;
+            </p>
+            <div style="text-align: center">
+                \(A^{-1}A = I_n \hspace{3em} \textcolor{red}{(2.14)}\)
+            </div>
+            <p>Equation \(\textcolor{red}{2.7}\) can be solved in the following way:</p>
+            <div style="text-align: center">
+                \[
+                \begin{aligned}
+                    Ax &= b \\
+                    A^{-1}Ax &= A^{-1}b \hspace{3em} \textcolor{red}{(2.15)} \\
+                    I_{n}x &= A^{-1}b \hspace{3em} \textcolor{red}{(2.16)}
+                \end{aligned}
+                \]
+                <p>\(\hspace{-3em}\)Hence \(\hspace{2.5em} x = A^{-1}b \hspace{2.6em} \textcolor{red}{(2.17)}\)</p>
+            </div>
+            <p>
+                This way of finding the coefficient matrix is of course dependent on us finding \(A^{-1}\)
+                which gets more computationally expensive process as the dimensions of a matrix scale.
+            </p>
+        </section>
     </div>
 
     <script>
