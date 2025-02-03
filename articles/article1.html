@@ -159,19 +159,26 @@
         </section>
 
         <section id="tensors">
-            <p>As we extend to the 3-dimensional realm, we'll need an array with more than two axes. In the general case, an array of numbers arranged in a rectangular grid with a variable number of axes is known as a tensor. A <span class="emphasize">tensor </span> is denoted <span class="bold-uppercase">A</span>. We identify a certain element of A at coordinates \((i, j, k) \) by writing \(A_{i, j, k} \). Operations such as transposition also apply to tensors. An example of a 3-dimensional tensor is:</p>
+            <p>As we extend to the 3-dimensional realm, we'll need an array with more than two axes. 
+                In the general case, an array of numbers arranged in a rectangular grid with a variable number of axes is known as a tensor. 
+                A <span class="emphasize">tensor </span> is denoted <span class="bold-uppercase">A</span>. We identify a certain element of A at coordinates \((i, j, k) \) by writing \(A_{i, j, k} \). 
+                Operations such as transposition also apply to tensors. An example of a tensor is:
+            </p>
             <div style="text-align: center">
                 \[
                     A = \left( \left( \begin{matrix} a_{1,1,1} & a_{1,1,2} & a_{1,1,3} \\ a_{1,2,1} & a_{1,2,2} & a_{1,2,3} \\ a_{1,3,1} & a_{1,3,2} & a_{1,3,3} \end{matrix} \right), \left( \begin{matrix} a_{2,1,1} & a_{2,1,2} & a_{2,1,3} \\ a_{2,2,1} & a_{2,2,2} & a_{2,2,3} \\ a_{2,3,1} & a_{2,3,2} & a_{2,3,3} \end{matrix} \right), \left( \begin{matrix} a_{3,1,1} & a_{3,1,2} & a_{3,1,3} \\ a_{3,2,1} & a_{3,2,2} & a_{3,2,3} \\ a_{3,3,1} & a_{3,3,2} & a_{3,3,3} \end{matrix} \right) \right)
                 \]
             </div>
         </section>
-
+        
         <section id="things-to-note">
             <h4><underline>Things to note:</underline></h4>
             <p>Matrix addition works iff the matrices being added have the same shape. We add them by adding their corresponding elements. \(C = A + B \) where \(C_{i, j} = A_{i, j} + B_{i, j} \).</p>
             <p>Matrix multiplication works iff we have matrices \(A \in \mathbb{R}^{m \times n} \) and \(B \in \mathbb{R}^{n \times p} \). The width of \( A \) must be equal to the height of \(B \) for the product \(AB \) to exist.</p>
-             <p>It is possible to add a matrix and a vector which yield another matrix: \(C = A + b \) where \(C_{i,j} = A_{i,j} + b_j \). What happens in this operation is that vector \(b\) is added to each row of matrix <span class="bold-uppercase">A</span>. This operation is termed <span class="emphasize">broadcasting</span>. For instance:</p>
+            <p>It is possible to add a matrix and a vector which yield another matrix: \(C = A + b \) where \(C_{i,j} = A_{i,j} + b_j \). 
+                What happens in this operation is that vector \(b\) is added to each row of matrix <span class="bold-uppercase">A</span>. 
+                This operation is termed <span class="emphasize">broadcasting</span>. For instance:
+            </p>
             <div style="text-align: center">
                 Let \(\hspace{0.3em}\)<span class="bold-uppercase">A</span> = \(\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix} \) and \(\hspace{0.2em} \) <span class="bold-lowercase">x</span> = \(\begin{bmatrix} 10 & 20 & 30\end{bmatrix} \)<br>
                 <br>
@@ -179,7 +186,7 @@
             </div>
         </section>
 
-         <section id="multiplication">
+        <section id="multiplication">
             <h2>Multiplying Matrices and Vectors</h2>
             <p>The matrix product of matrices <span class="bold-uppercase">A</span> and <span class="bold-uppercase">B</span> is a third matrix <span class="bold-uppercase">C</span>. 
                 In order for the product to be defined <span class="bold-uppercase">A</span> must have the same number of columns as <span class="bold-uppercase">B</span> has rows. 
@@ -219,7 +226,7 @@
                 The dot product between two vector <span class="bold-lowercase">x</span> and <span class="bold-lowercase">y</span> which has the same dimensions is the matrix product \(x^{T}y\).
             </p>
             <p>
-                Here are a couple of axioms related to matrix multiplication:
+                Here are a couple of algebraic axioms related to matrix multiplication:
             </p>
             <div style="text-align: center">
                 \[
@@ -260,12 +267,16 @@
             <div style="text-align: center">
                 \[
                 \begin{aligned}
-                    A_{1,1}x_1 + A_{1,2}x_2 + \dots + A_{1,n}x_n &= b_1 \\
-                    A_{2,1}x_1 + A_{2,2}x_2 + \dots + A_{2,n}x_n &= b_2 \\
+                    A_{1,1}x_1 + A_{1,2}x_2 + \dots + A_{1,n}x_n &= b_1 \hspace{3em} \textcolor{red}{(2.11)} \\
+                    A_{2,1}x_1 + A_{2,2}x_2 + \dots + A_{2,n}x_n &= b_2 \hspace{3em} \textcolor{red}{(2.12)} \\
                     \dots \hspace{5em} \\
-                    A_{m,1}x_1 + A_{m,2}x_2 + \dots + A_{m,n}x_n &= b_m \\
+                    A_{m,1}x_1 + A_{m,2}x_2 + \dots + A_{m,n}x_n &= b_m \hspace{2.7em} \textcolor{red}{(2.13)} \\
                 \end{aligned}
                 \]
+            </div>
+            <p>An example of an identity matrix is:</p>
+            <div style="text-align: center">
+                \(I_3 = \begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1\end{bmatrix}\)
             </div>
         </section>
 
@@ -302,9 +313,9 @@
                     I_{n}x &= A^{-1}b \hspace{3em} \textcolor{red}{(2.16)}
                 \end{aligned}
                 \]
-               <p>\(\hspace{-3em}\)Hence \(\hspace{2.5em} x = A^{-1}b \hspace{3.3em} \textcolor{red}{(2.17)}\)</p>
+                <p>\(\hspace{-3em}\)Hence \(\hspace{2.5em} x = A^{-1}b \hspace{3.3em} \textcolor{red}{(2.17)}\)</p>
             </div>
-             <p>
+            <p>
                 This way of finding the coefficient matrix is of course dependent on us finding \(A^{-1}\)
                 which gets more computationally expensive process as the dimensions of some matrix <span class="bold-uppercase">A</span> scale.
             </p>
@@ -328,6 +339,7 @@
             </div>
         </section>
     </div>
+    
 
     <script>
         window.onscroll = function() {
