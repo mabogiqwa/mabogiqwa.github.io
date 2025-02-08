@@ -20,25 +20,17 @@
                 background-size: 600%, 600%;
                 animation: gradientBackground 15s ease infinite;
                 margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
+                padding-top: 80px;
                 font-family: Arial, sans-serif;
                 color: #e2e1e1;
             }
 
             header {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
+                text-align: left;
+                margin: 0 auto;
+                width: 90%;
                 padding: 20px;
-                background-color: rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                z-index: 10;
             }
 
             footer {
@@ -139,6 +131,10 @@
             @media (max-width: 768px) {
                 header nav {
                     display: none;
+                }
+
+                body {
+                    padding-top: 100px;
                 }
 
                 .hamburger {
