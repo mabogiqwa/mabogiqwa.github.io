@@ -1,131 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="An introduction to Linear Algebra concepts in Deep Learning, including scalars, vectors, matrices, and eigendecomposition.">
-        <title>Inside the black box of neural nets</title>
-        <link rel="stylesheet" href="styles.css">
-    
-        <script>
-            MathJax = {
-                tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] }
-            };
-        </script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap');
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #f5f5f5;
-                color: #333;
-                line-height: 1.6;
-            }
-            .italic-variable {
-                font-family: 'Roboto Flex', sans-serif;
-                font-style: italic;
-            }
-    
-            .progress-container {
-                width: 100%;
-                height: 8px;
-                background: #ccc;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-            }
-    
-            .progress-bar {
-                height: 8px;
-                background: #2B2B87;
-                width: 0%;
-            }
-    
-            .toc {
-                background: #f4f4f4;
-                padding: 15px;
-                margin-bottom: 20px;
-                border-radius: 5px;
-            }
-    
-            .toc a {
-                display: block; 
-                text-decoration: none;
-                color: #333;
-                padding: 5px 0;
-            }
-    
-            .toc a:hover {
-                text-decoration: underline;
-            }
-            
-            header {
-                background-color: #2B2B87;
-                color: white;
-                padding: 15px;
-                text-align: center;
-                font-size: 24px;
-            }
-            .container {
-                max-width: 800px;
-                margin: 20px auto;
-                background: white;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            }
-            h1, h2 {
-                color: #060653;
-            }
-            p {
-                line-height: 1.6;
-                text-align: justify;
-                font-family: 'Segoe UI';
-            }
-            footer {
-                text-align: center;
-                padding: 10px;
-                background-color: #2B2B87;
-                color: white;
-                margin-top: 20px;
-            }
-    
-            .bold-lowercase {
-                font-weight: bold;
-                text-transform: lowercase;
-            }
-            .bold-uppercase {
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-            .emphasize {
-                font-weight: bold;
-                font-style: italic;
-                color: #d9534f;
-            }
-        </style> 
-    </head>
-    <body>
-        <div class="progress-container">
-            <div id="progress-bar" class="progress-bar"></div>
-        </div>
-        <header>
-            Inside the Black Box: How Neural Networks Learn
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Inside the black box of neural nets">
+    <title>Linear Algebra in Deep Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2B2B87;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #060653;
+        }
+        p {
+            line-height: 1.6;
+            text-align: justify;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2B2B87;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Inside the Black Box: How Neural Networks Learn
+    </header>
+    <div class="container">
         <p>
             It's been a desire of the ages to enable computers to <em>think</em>. These desires date back at least to times of Ancient Greece. 
-            Figures such as Galatea, Talos, and Pandora in Greek tales may be regarded as artificial life.
+            Figures such as Galatea, Talos, and Pandora in Greek tales may be regarded as artificial life.   
         </p>
         <p>
             When programmable computers were first created, people had already wondered whether we could create machines capable of conscious thought.
             This was a hundred years prior <a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Ada Lovelace</a> built the first one.
             Nowadays, <a href="https://en.wikipedia.org/wiki/Computational_intelligence" target="_blank">computational intelligence</a>/AI is a thriving field which is almost
             ubiquitous in most of the technology we interact with. We look to intelligent software to automate routine labour, understand speech, analyse images, make diagnosis
-            in medicine and support basic scientific research.
+            in medicine and support basic scientific research. 
         </p>
-    </body>
+    </div>
+</body>
 </html>
+
