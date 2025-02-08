@@ -323,11 +323,11 @@
             <div style="text-align: center">
                 Let <span class="text-align: center">A</span> = \(\begin{bmatrix} 1 & 2 & -1 \\1 & 1 & 2 \\-1 & 2 & 1\end{bmatrix}\), then \(A^{-1} = \begin{bmatrix} \frac{1}{4} & \frac{1}{3} & -\frac{5}{12} \\ \frac{1}{4} & 0 & \frac{1}{3} \\ -\frac{1}{4} & \frac{1}{3} & \frac{1}{12} \end{bmatrix}\)<br>
                 <br>
-                \(\hspace{-2em}A.A^{-1} = \begin{bmatrix} 1 & 2 & -1 \\1 & 1 & 2 \\-1 & 2 & 1\end{bmatrix}.\begin{bmatrix} \frac{1}{4} & \frac{1}{3} & -\frac{5}{12} \\ \frac{1}{4} & 0 & \frac{1}{3} \\ -\frac{1}{4} & \frac{1}{3} & \frac{1}{12} \end{bmatrix}\)<br>
-                \(\hspace{-2.2em} = \begin{bmatrix}1\\1\\-1\end{bmatrix}\begin{bmatrix}\frac{1}{4} & \frac{1}{3} & -\frac{5}{12}\end{bmatrix} + \begin{bmatrix}2\\1\\2\end{bmatrix}\begin{bmatrix}\frac{1}{4} & 0 & \frac{1}{3}\end{bmatrix} + \begin{bmatrix}-1\\2\\1\end{bmatrix}\begin{bmatrix}-\frac{1}{4} & \frac{1}{3} & \frac{1}{12}\end{bmatrix}\)
-                \(\hspace{-2.2em} = \begin{bmatrix}\frac{1}{4} & \frac{1}{3} & -\frac{5}{12}\\ \frac{1}{4} & \frac{1}{3} & -\frac{5}{12} \\ -\frac{1}{4} & -\frac{1}{3} & \frac{5}{12}\end{bmatrix} + \begin{bmatrix}\frac{1}{2} & 0 & \frac{2}{3}\\ \frac{1}{4} & 0 & \frac{1}{3} \\ \frac{1}{2} & 0 & \frac{2}{3}\end{bmatrix} + \begin{bmatrix} \frac{1}{4} & -\frac{1}{3} & -\frac{1}{12} \\ -\frac{1}{2} & \frac{2}{3} & \frac{1}{6} \\ -\frac{1}{4} & \frac{1}{3} & \frac{1}{12}\end{bmatrix}\)<br>
+                \(\hspace{-12em}A.A^{-1} = \begin{bmatrix} 1 & 2 & -1 \\1 & 1 & 2 \\-1 & 2 & 1\end{bmatrix}.\begin{bmatrix} \frac{1}{4} & \frac{1}{3} & -\frac{5}{12} \\ \frac{1}{4} & 0 & \frac{1}{3} \\ -\frac{1}{4} & \frac{1}{3} & \frac{1}{12} \end{bmatrix}\)<br>
+                \(\hspace{4em} = \begin{bmatrix}1\\1\\-1\end{bmatrix}\begin{bmatrix}\frac{1}{4} & \frac{1}{3} & -\frac{5}{12}\end{bmatrix} + \begin{bmatrix}2\\1\\2\end{bmatrix}\begin{bmatrix}\frac{1}{4} & 0 & \frac{1}{3}\end{bmatrix} + \begin{bmatrix}-1\\2\\1\end{bmatrix}\begin{bmatrix}-\frac{1}{4} & \frac{1}{3} & \frac{1}{12}\end{bmatrix}\)
+                \(\hspace{1em} = \begin{bmatrix}\frac{1}{4} & \frac{1}{3} & -\frac{5}{12}\\ \frac{1}{4} & \frac{1}{3} & -\frac{5}{12} \\ -\frac{1}{4} & -\frac{1}{3} & \frac{5}{12}\end{bmatrix} + \begin{bmatrix}\frac{1}{2} & 0 & \frac{2}{3}\\ \frac{1}{4} & 0 & \frac{1}{3} \\ \frac{1}{2} & 0 & \frac{2}{3}\end{bmatrix} + \begin{bmatrix} \frac{1}{4} & -\frac{1}{3} & -\frac{1}{12} \\ -\frac{1}{2} & \frac{2}{3} & \frac{1}{6} \\ -\frac{1}{4} & \frac{1}{3} & \frac{1}{12}\end{bmatrix}\)<br>
                 <br>
-                \(\hspace{-21em} = \begin{bmatrix}1 & 0 & \sim 0 \\ 0 & 1 & 0 \\0 & 0 & \sim 1 \end{bmatrix}\)
+                \(\hspace{-17.8em} = \begin{bmatrix}1 & 0 & \sim 0 \\ 0 & 1 & 0 \\0 & 0 & \sim 1 \end{bmatrix}\)
             </div>
             <p>Note that the resulting identity matrix has approximate entries since I analytically found \(A^{-1}\). Using Octave/Matlab to find the inverse of A will not result in \(AA^{-1}\) directly being an identity matrix.</p>
         </section>
