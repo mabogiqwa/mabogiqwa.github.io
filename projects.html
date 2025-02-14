@@ -22,10 +22,11 @@
                 margin: 0;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                height: 100vh;
+                align-items: flex-start;
+                min-height: 100vh;
                 font-family: Arial, sans-serif;
                 color: #e2e1e1;
+                padding-top: 80px;
             }
 
             header {
@@ -49,7 +50,7 @@
                 padding: 10px;
                 font-size: 18px;
                 color: #e2e1e1;
-                background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
+                background-color: rgba(0, 0, 0, 0.5);
             }
 
             header div.contact-info {
@@ -88,52 +89,46 @@
                 top: 20px;
             }
 
-            .table-of-contents ul ul {
-                padding-left: 20px;
-            }
-
             .container {
-                width: 100%;
-                margin: 0;
+                max-width: 800px;
+                margin: 0 auto;
                 padding: 20px;
-                padding-left: 20px;
-                text-align: left;
-                position: relative;
-                top: 590px;
             }
 
-            #skills ul {
-                padding-left: 20px;
+            .project-card {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px 0;
+                backdrop-filter: blur(5px);
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
             }
 
-            #skills li {
+            .project-icon {
+                width: 100px;
+                height: 100px;
+                flex-shrink: 0;
+            }
+
+            .project-content {
+                flex-grow: 1;
+            }
+
+            .project-title {
+                font-size: 24px;
                 margin-bottom: 10px;
+                color: #ffffff;
             }
 
-            #education ul {
-                padding-left: 20px;
+            .project-description {
+                line-height: 1.6;
+                color: #e2e1e1;
             }
 
-            #education li {
-                margin-bottom: 10px;
-            }
-
-            .courses {
-                list-style-type: none;
-                padding-left: 20px;
-            }
-
-            .courses > li {
-                margin-bottom: 20px;
-            }
-
-            .course-list {
-                list-style-type: circle;
-                margin-left: 20px;
-            }
-
-            .course-list li {
-                margin: 10px;
+            a {
+                color: #e2e1e1;
             }
 
             @media (max-width: 768px) {
@@ -161,8 +156,14 @@
                     margin: 10px 0;
                 }
 
-                body {
-                    padding-top: 80px;
+                .project-card {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .project-icon {
+                    margin-bottom: 15px;
                 }
             }
         </style>
@@ -171,7 +172,6 @@
         <header>
             <div class="contact-info" onclick="showEmail()">Contact Information</div>
     
-            <!-- Hamburger menu icon -->
             <div class="hamburger" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
@@ -183,7 +183,29 @@
                 <a href="projects.html">Projects</a>
             </nav>
         </header>
-        <p>Coming soon...</p>
+
+        <div class="container">
+            <div class="project-card">
+                <svg class="project-icon" viewBox="0 0 100 100">
+                    <rect x="0" y="0" width="100" height="100" rx="15" fill="#2563eb"/>
+                    <rect x="25" y="20" width="50" height="65" rx="5" fill="white"/>
+                    <rect x="35" y="15" width="30" height="10" rx="3" fill="#94a3b8"/>
+                    <rect x="32" y="35" width="36" height="4" rx="2" fill="#64748b"/>
+                    <rect x="32" y="45" width="36" height="4" rx="2" fill="#64748b"/>
+                    <rect x="32" y="55" width="36" height="4" rx="2" fill="#64748b"/>
+                    <rect x="32" y="65" width="10" height="12" fill="#2563eb"/>
+                    <rect x="45" y="62" width="10" height="15" fill="#3b82f6"/>
+                    <rect x="58" y="68" width="10" height="9" fill="#60a5fa"/>
+                </svg>
+                <div class="project-content">
+                    <h2 class="project-title">Stock Editor</h2>
+                    <p class="project-description">
+                        Stock Editor is a desktop inventory management application built with Qt/C++ that provides businesses with a streamlined solution for product tracking and stock control. The application features an intuitive interface for managing product details including barcodes, descriptions, stock levels, and pricing. Users can easily import and export inventory data, modify existing items, and track stock levels through a clean tabulated display. Built with modern C++ and the Qt framework, Stock Editor demonstrates robust software engineering principles while maintaining a user-friendly experience through its toolbar-based navigation and responsive layout. The application combines efficient data management with a professional interface, making inventory control accessible and reliable for business users.
+                    </p>
+                    <p><a href="https://github.com/mabogiqwa/qt_projects/tree/main/qt_stock_management_gui" target="_blank">View Source Code</a></p>
+                </div>
+            </div>
+        </div>
 
         <script>
             function toggleMenu() {
