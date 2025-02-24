@@ -1,257 +1,342 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/jpeg" href="images/icon.ico">
-        <title>About</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/icon.ico">
+    <title>Blog - Mabo Giqwa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle, #0a0a0a, #111);
+            color: #ffffff;
+            min-height: 100vh;
+        }
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
 
-        <style>
-            @keyframes gradientBackground {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
+        .contact-info {
+            cursor: pointer;
+            color: #bbb;
+            transition: color 0.3s;
+        }
 
-            body {
-                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
-                background-size: 600%, 600%;
-                animation: gradientBackground 15s ease infinite;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-family: Arial, sans-serif;
-                color: #e2e1e1;
-            }
+        .contact-info:hover {
+            color: #fff;
+        }
 
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                z-index: 10;
-            }
+        header nav {
+            display: flex;
+        }
 
-            footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-                font-size: 18px;
-                color: #e2e1e1;
-                background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
-            }
+        header nav a {
+            color: #bbb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
 
-            header div.contact-info {
-                font-size: 18px;
-                color: #e2e1e1;
-                cursor: pointer;
-            }
+        header nav a:hover {
+            color: #fff;
+        }
 
-            header div.contact-info:hover {
-                text-decoration: underline;
-            }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #bbb;
+            cursor: pointer;
+        }
 
+        @media (max-width: 768px) {
             header nav {
-                display: flex;
-                gap: 20px;
-            }
-
-            header nav a {
-                color: #e2e1e1;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            header nav a:hover {
-                color: #ccc;
-                text-decoration: underline;
+                display: none;
             }
 
             .hamburger {
-                display: none;
-                font-size: 30px;
-                color: #e2e1e1;
-                cursor: pointer;
-                position: absolute;
-                right: 20px;
-                top: 20px;
+                display: block;
             }
 
-            .table-of-contents ul ul {
-                padding-left: 20px;
-            }
-
-            .container {
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                padding-left: 20px;
-                text-align: left;
-                position: relative;
-                top: 590px;
-            }
-
-            #skills ul {
-                padding-left: 20px;
-            }
-
-            #skills li {
-                margin-bottom: 10px;
-            }
-
-            #education ul {
-                padding-left: 20px;
-            }
-
-            #education li {
-                margin-bottom: 10px;
-            }
-
-            .courses {
-                list-style-type: none;
-                padding-left: 20px;
-            }
-
-            .courses > li {
-                margin-bottom: 20px;
-            }
-
-            .course-list {
-                list-style-type: circle;
-                margin-left: 20px;
-            }
-
-            .course-list li {
-                margin: 10px;
-            }
-
-            #blog {
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
                 position: absolute;
                 top: 70px;
-                left: 20px;
-                background: rgba(0, 0, 0, 0.5);
+                right: 20px;
+                background: rgba(0, 0, 0, 0.9);
                 padding: 15px;
-                border-radius: 10px;
-                color: #e2e1e1;
+                border-radius: 5px;
+                gap: 10px;
             }
+        }
 
-            #blog h2 {
-                margin: 0;
-                font-size: 20px;
+        .content {
+            padding: 120px 40px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .blog-intro {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #bbb;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 180px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .article-date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .article-excerpt {
+            color: #bbb;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: rgba(78, 115, 223, 0.2);
+            color: #4e73df;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: rgba(78, 115, 223, 0.4);
+            color: #fff;
+        }
+
+        .featured-article {
+            margin-bottom: 50px;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            backdrop-filter: blur(5px);
+        }
+
+        @media screen and (min-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr 1fr;
             }
+        }
 
-            #blog ul {
-                list-style: none;
-                padding: 0;
-                margin: 10px 0 0 0;
+        .featured-article-image {
+            height: 300px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .featured-article-content {
+            padding: 30px;
+        }
+
+        .featured-label {
+            display: inline-block;
+            background-color: rgba(78, 115, 223, 0.2);
+            color: #4e73df;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+
+        .featured-article-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: #bbb;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        @media screen and (max-width: 768px) {
+            .article-grid {
+                grid-template-columns: 1fr;
             }
-
-            #blog li {
-                margin-bottom: 5px;
+            
+            .featured-article-image {
+                height: 200px;
             }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
 
-            #blog a {
-                color: #88d3ce;
-                text-decoration: none;
-                font-size: 16px;
-            }
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
 
-            #blog a:hover {
-                text-decoration: underline;
-                color: #e2e1e1;
-            }
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="articles.html">Articles</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
 
-            .article-title {
-                font-size: 24px;
-                font-weight: bold;
-             }
+    <div class="content">
+        <h1 class="page-title">My Blog</h1>
+        <p class="blog-intro">
+            I write about mathematics, computer science, and machine learning. 
+            Here you'll find my thoughts, tutorials, and explorations into the fascinating 
+            world of algorithms and computational thinking.
+        </p>
 
-            .article-date {
-                font-size: 14px;
-                color: #777;
-                margin-left: 20px;
-            }
-
-            @media (max-width: 768px) {
-                header nav {
-                    display: none;
-                }
-
-                .hamburger {
-                    display: block;
-                }
-
-                .menu-active nav {
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 60px;
-                    right: 20px;
-                    background-color: #060653;
-                    padding: 10px;
-                    border-radius: 5px;
-                    gap: 10px;
-                }
-
-                .menu-active nav a {
-                    margin: 10px 0;
-                }
-
-                body {
-                    padding-top: 80px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="contact-info" onclick="showEmail()">Contact Information</div>
-    
-            <!-- Hamburger menu icon -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+        <div class="featured-article">
+            <div class="featured-article-image" style="background-image: url('/api/placeholder/800/600');"></div>
+            <div class="featured-article-content">
+                <span class="featured-label">Featured</span>
+                <h2 class="featured-article-title">Inside the Black Box: How Neural Networks Learn</h2>
+                <p class="article-date">February 8, 2025</p>
+                <p class="article-excerpt">
+                    Neural networks have revolutionized machine learning, but how exactly do they work?
+                    In this article, I demystify the training process and explain backpropagation, 
+                    activation functions, and the mathematics that makes deep learning possible.
+                </p>
+                <a href="articles/article2.html" class="read-more">Read More</a>
             </div>
-    
-            <nav>
-                <a href="index.html">Home Page</a>
-                <a href="about.html">About</a>
-                <a href="articles.html">Articles</a>
-                <a href="projects.html">Projects</a>
-            </nav>
-        </header>
-        <section id="blog">
-            <h2>Latest articles</h2>
-            <ul>
-               <div class="article1">
-                    <li><a href="articles/article1.html" class="article-title" target="_blank">Linear Algebra in Deep Learning(in progress)</a></li>
-                    <p class="article-date">Published on: February 1, 2025</p>
-                </div>
-                <div class="article2">
-                    <li><a href="articles/article2.html" class="article-title" target="_blank">Inside the Black Box: How Neural Networks Learn(in progress)</a></li>
-                    <p class="article-date">Published on: February 8, 2025</p>
-                </div>
-            </ul>
-        </section>
+        </div>
 
-        <script>
-            function toggleMenu() {
-                document.body.classList.toggle('menu-active');
-            }
-    
-            function showEmail() {
-                alert("Email: mabogiqwa1@gmail.com");
-            }
-        </script>
-    </body>
+        <div class="article-grid">
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                <div class="article-content">
+                    <h3 class="article-title">Linear Algebra in Deep Learning</h3>
+                    <p class="article-date">February 1, 2025</p>
+                    <p class="article-excerpt">
+                        Explore the fundamental linear algebra concepts that power modern deep learning algorithms and why they're essential for understanding AI systems.
+                    </p>
+                    <a href="articles/article1.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                <div class="article-content">
+                    <h3 class="article-title">Coming Soon: The Mathematics of Transformers</h3>
+                    <p class="article-date">Coming February 15, 2025</p>
+                    <p class="article-excerpt">
+                        A deep dive into the mathematical foundations of transformer models that power modern large language models like GPT and BERT.
+                    </p>
+                    <a href="#" class="read-more">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                <div class="article-content">
+                    <h3 class="article-title">Coming Soon: Differential Equations in ML</h3>
+                    <p class="article-date">Coming February 22, 2025</p>
+                    <p class="article-excerpt">
+                        How differential equations are making their way into cutting-edge machine learning research and why they matter for the future of AI.
+                    </p>
+                    <a href="#" class="read-more">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Stay curious, stay inspired</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+
+        function showEmail() {
+            alert("Email: mabogiqwa1@gmail.com");
+        }
+    </script>
+</body>
 </html>
