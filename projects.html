@@ -1,220 +1,220 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/jpeg" href="images/icon.ico">
-        <title>About</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle, #0a0a0a, #111);
+            color: #ffffff;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
 
-        <style>
-            @keyframes gradientBackground {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
+        header nav a {
+            color: #bbb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
 
-            body {
-                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
-                background-size: 600%, 600%;
-                animation: gradientBackground 15s ease infinite;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                min-height: 100vh;
-                font-family: Arial, sans-serif;
-                color: #e2e1e1;
-                padding-top: 80px;
-            }
+        header nav a:hover {
+            color: #fff;
+        }
 
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                z-index: 10;
-            }
+        .contact-info {
+            cursor: pointer;
+            color: #bbb;
+            transition: color 0.3s;
+        }
 
-            footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-                font-size: 18px;
-                color: #e2e1e1;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
+        .contact-info:hover {
+            color: #fff;
+        }
 
-            header div.contact-info {
-                font-size: 18px;
-                color: #e2e1e1;
-                cursor: pointer;
-            }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-            header div.contact-info:hover {
-                text-decoration: underline;
-            }
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+        }
 
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-icon {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+
+        .project-content {
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: #bbb;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .project-content a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-content a:hover {
+            color: #fff;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #bbb;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
             header nav {
-                display: flex;
-                gap: 20px;
-            }
-
-            header nav a {
-                color: #e2e1e1;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            header nav a:hover {
-                color: #ccc;
-                text-decoration: underline;
+                display: none;
             }
 
             .hamburger {
-                display: none;
-                font-size: 30px;
-                color: #e2e1e1;
-                cursor: pointer;
-                position: absolute;
-                right: 20px;
-                top: 20px;
+                display: block;
             }
 
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 15px;
+                border-radius: 5px;
+                gap: 10px;
             }
 
             .project-card {
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
-                padding: 20px;
-                margin: 20px 0;
-                backdrop-filter: blur(5px);
-                display: flex;
-                gap: 20px;
-                align-items: flex-start;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
             .project-icon {
-                width: 100px;
-                height: 100px;
-                flex-shrink: 0;
+                margin-bottom: 15px;
             }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
 
-            .project-content {
-                flex-grow: 1;
-            }
-
-            .project-title {
-                font-size: 24px;
-                margin-bottom: 10px;
-                color: #ffffff;
-            }
-
-            .project-description {
-                line-height: 1.6;
-                color: #e2e1e1;
-            }
-
-            a {
-                color: #e2e1e1;
-            }
-
-            @media (max-width: 768px) {
-                header nav {
-                    display: none;
-                }
-
-                .hamburger {
-                    display: block;
-                }
-
-                .menu-active nav {
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 60px;
-                    right: 20px;
-                    background-color: #060653;
-                    padding: 10px;
-                    border-radius: 5px;
-                    gap: 10px;
-                }
-
-                .menu-active nav a {
-                    margin: 10px 0;
-                }
-
-                .project-card {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .project-icon {
-                    margin-bottom: 15px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="contact-info" onclick="showEmail()">Contact Information</div>
-    
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-    
-            <nav>
-                <a href="index.html">Home Page</a>
-                <a href="about.html">About</a>
-                <a href="articles.html">Articles</a>
-                <a href="projects.html">Projects</a>
-            </nav>
-        </header>
-
-        <div class="container">
-            <div class="project-card">
-                <svg class="project-icon" viewBox="0 0 100 100">
-                    <rect x="0" y="0" width="100" height="100" rx="15" fill="#2563eb"/>
-                    <rect x="25" y="20" width="50" height="65" rx="5" fill="white"/>
-                    <rect x="35" y="15" width="30" height="10" rx="3" fill="#94a3b8"/>
-                    <rect x="32" y="35" width="36" height="4" rx="2" fill="#64748b"/>
-                    <rect x="32" y="45" width="36" height="4" rx="2" fill="#64748b"/>
-                    <rect x="32" y="55" width="36" height="4" rx="2" fill="#64748b"/>
-                    <rect x="32" y="65" width="10" height="12" fill="#2563eb"/>
-                    <rect x="45" y="62" width="10" height="15" fill="#3b82f6"/>
-                    <rect x="58" y="68" width="10" height="9" fill="#60a5fa"/>
-                </svg>
-                <div class="project-content">
-                    <h2 class="project-title">Stock Editor</h2>
-                    <p class="project-description">
-                        Stock Editor is a desktop inventory management application built with Qt/C++ that provides businesses with a streamlined solution for product tracking and stock control. The application features an intuitive interface for managing product details including barcodes, descriptions, stock levels, and pricing. Users can easily import and export inventory data, modify existing items, and track stock levels through a clean tabulated display. Built with modern C++ and the Qt framework, Stock Editor demonstrates robust software engineering principles while maintaining a user-friendly experience through its toolbar-based navigation and responsive layout. The application combines efficient data management with a professional interface, making inventory control accessible and reliable for business users.
-                    </p>
-                    <p><a href="https://github.com/mabogiqwa/Qt-Stock-Management-Application" target="_blank">View Source Code</a></p>
-                </div>
-            </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
         </div>
 
-        <script>
-            function toggleMenu() {
-                document.body.classList.toggle('menu-active');
-            }
-    
-            function showEmail() {
-                alert("Email: mabogiqwa1@gmail.com");
-            }
-        </script>
-    </body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="articles.html">Articles</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-card">
+            <svg class="project-icon" viewBox="0 0 100 100">
+                <rect x="0" y="0" width="100" height="100" rx="15" fill="#2563eb"/>
+                <rect x="25" y="20" width="50" height="65" rx="5" fill="white"/>
+                <rect x="35" y="15" width="30" height="10" rx="3" fill="#94a3b8"/>
+                <rect x="32" y="35" width="36" height="4" rx="2" fill="#64748b"/>
+                <rect x="32" y="45" width="36" height="4" rx="2" fill="#64748b"/>
+                <rect x="32" y="55" width="36" height="4" rx="2" fill="#64748b"/>
+                <rect x="32" y="65" width="10" height="12" fill="#2563eb"/>
+                <rect x="45" y="62" width="10" height="15" fill="#3b82f6"/>
+                <rect x="58" y="68" width="10" height="9" fill="#60a5fa"/>
+            </svg>
+            <div class="project-content">
+                <h2 class="project-title">Stock Editor</h2>
+                <p class="project-description">
+                    Stock Editor is a desktop inventory management application built with Qt/C++ that provides businesses with a streamlined solution for product tracking and stock control. The application features an intuitive interface for managing product details including barcodes, descriptions, stock levels, and pricing. Users can easily import and export inventory data, modify existing items, and track stock levels through a clean tabulated display. Built with modern C++ and the Qt framework, Stock Editor demonstrates robust software engineering principles while maintaining a user-friendly experience through its toolbar-based navigation and responsive layout. The application combines efficient data management with a professional interface, making inventory control accessible and reliable for business users.
+                </p>
+                <a href="https://github.com/mabogiqwa/qt_projects/tree/main/qt_stock_management_gui" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Stay curious, stay inspired
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+
+        function showEmail() {
+            alert("Email: mabogiqwa1@gmail.com");
+        }
+    </script>
+</body>
 </html>
