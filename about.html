@@ -1,302 +1,257 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/jpeg" href="images/icon.ico">
-        <title>About</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mabo Giqwa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle, #0a0a0a, #111);
+            color: #ffffff;
+            min-height: 100vh;
+        }
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
 
-        <style>
-            @keyframes gradientBackground {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
+        .contact-info {
+            cursor: pointer;
+            color: #bbb;
+            transition: color 0.3s;
+        }
 
-            body {
-                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
-                background-size: 600%, 600%;
-                animation: gradientBackground 15s ease infinite;
-                margin: 0;
-                padding-top: 70px;
-                font-family: Arial, sans-serif;
-                color: #e2e1e1;
-                min-height: 100vh;
-            }
+        .contact-info:hover {
+            color: #fff;
+        }
 
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                z-index: 1000;
-                height: 70px;
-            }
+        header nav {
+            display: flex;
+        }
 
-            footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-                font-size: 18px;
-                color: #e2e1e1;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
+        header nav a {
+            color: #bbb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
 
-            header div.contact-info {
-                font-size: 18px;
-                color: #e2e1e1;
-                cursor: pointer;
-            }
+        header nav a:hover {
+            color: #fff;
+        }
 
-            header div.contact-info:hover {
-                text-decoration: underline;
-            }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #bbb;
+            cursor: pointer;
+        }
 
+        @media (max-width: 768px) {
             header nav {
-                display: flex;
-                gap: 20px;
-            }
-
-            header nav a {
-                color: #e2e1e1;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            header nav a:hover {
-                color: #ccc;
-                text-decoration: underline;
+                display: none;
             }
 
             .hamburger {
-                display: none;
-                font-size: 30px;
-                color: #e2e1e1;
-                cursor: pointer;
+                display: block;
+            }
+
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
                 position: absolute;
+                top: 70px;
                 right: 20px;
-                top: 20px;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 15px;
+                border-radius: 5px;
+                gap: 10px;
             }
+        }
 
-            .table-of-contents ul ul {
-                padding-left: 20px;
-            }
+        .content {
+            padding: 120px 40px 100px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-            .container {
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                text-align: left;
-                position: relative;
-                top: 0;
-            }
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
 
-            #skills ul {
-                padding-left: 20px;
-            }
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
 
-            #skills li {
-                margin-bottom: 10px;
-            }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-            #education ul {
-                padding-left: 20px;
-            }
+        .section li {
+            margin-bottom: 15px;
+            color: #bbb;
+            font-weight: 300;
+        }
 
-            #education li {
-                margin-bottom: 10px;
-            }
+        .section a {
+            color: #4e73df;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-            .courses {
-                list-style-type: none;
-                padding-left: 20px;
-            }
+        .section a:hover {
+            color: #fff;
+        }
 
-            .courses > li {
-                margin-bottom: 20px;
-            }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: #bbb;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
 
-            .course-list {
-                list-style-type: circle;
-                margin-left: 20px;
-            }
+        #courses ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 0;
+        }
+        
+        #courses li {
+            margin-bottom: 5px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
 
-            .course-list li {
-                margin: 10px;
-            }
-
-            @media (max-width: 768px) {
-                header nav {
-                    display: none;
-                }
-
-                .hamburger {
-                    display: block;
-                }
-
-                .menu-active nav {
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 60px;
-                    right: 20px;
-                    background-color: #060653;
-                    padding: 10px;
-                    border-radius: 5px;
-                    gap: 10px;
-                }
-
-                .menu-active nav a {
-                    margin: 10px 0;
-                }
-
-                body {
-                    padding-top: 80px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="contact-info" onclick="showEmail()">Contact Information</div>
-    
-            <!-- Hamburger menu icon -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-    
-            <nav>
-                <a href="index.html">Home Page</a>
-                <a href="about.html">About</a>
-                <a href="articles.html">Articles</a>
-                <a href="projects.html">Projects</a>
-            </nav>
-        </header>
-
-        <div class="container">
-            <h1>About</h1>
-            
-            <section class="table-of-contents">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                </ul>
-            </section>
-
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li><strong>Professional Working:</strong> Python, C++, Javascript</li>
-                    <li><strong>Familiar with:</strong> HTML, CSS, MATLAB, R, LaTex, Java, C, Tensorflow, Scikit-Learn</li>
-                    <li><strong>Soft Skills:</strong> Time Management, Communication, Attention to Detail, Adaptability</li>
-                </ul>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <ul>
-                    <li><strong>Majors:</strong> Mathematics and Computer Science</li>
-                    <li><strong>Faculty:</strong> College of Science, Engineering, and Technology</li>
-                    <li><strong>University:</strong> University of South Africa (UNISA)</li>
-                    <li><strong>Country:</strong> South Africa</li>
-                    <li><strong>Period:</strong> 2022 - 2026</li>
-                </ul>
-            </section>
-
-            <section id="courses">
-                <h2>Course List</h2>
-                <ul class="courses">
-                    <li>
-                        <strong>2022 academic year</strong>
-                        <ul class="course-list">
-                            <li>Calculus A (completed)</li>
-                            <li>Calculus B (completed)</li>
-                            <li>Linear Algebra I (completed)</li>
-                            <li>Theoretical Computer Science I (completed)</li>
-                            <li>Introduction to Programming I (completed)</li>
-                            <li>Introduction to Programming II (completed)</li>
-                            <li>Computer Systems: Fundamental Concepts (completed)</li>
-                            <li>Ethical Information and Communication Technologies (completed)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>2023 academic year</strong>
-                        <ul class="course-list">
-                            <li>Differential Equations (completed)</li>
-                            <li>Numerical Methods I (completed)</li>
-                            <li>Calculus in Higher Dimensions (completed)</li>
-                            <li>Introduction to Discrete Mathematics (completed)</li>
-                            <li>Theoretical Computer Science II (completed)</li>
-                            <li>Programming: Data Structures (completed)</li>
-                            <li>Programming: Contemporary Concepts (completed)</li>
-                            <li>Formal Logic II (completed)</li>
-                            <li>Philosophy of Science (completed)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>2024 academic year</strong>
-                        <ul class="course-list">
-                            <li>Ordinary Differential Equations (completed)</li>
-                            <li>Numerical Methods II (completed)</li>
-                            <li>Linear Algebra II (completed)</li>
-                            <li>Real Analysis I (completed)</li>
-                            <li>Theoretical Computer Science III (completed)</li>
-                            <li>Formal Logic III (completed)</li>
-                            <li>Operating Systems and Architecture (completed)</li>
-                            <li>Techniques of Artificial Intelligence (in progress)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>2025 academic year</strong>
-                        <ul class="course-list">
-                            <li>Discrete Mathematics II (in progress)</li>
-                            <li>Linear Algebra III (in progress)</li>
-                            <li>Complex Analysis (in progress)</li>
-                            <li>Real Analysis II (in progress)</li>
-                            <li>Advanced Programming (in progress)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="certifications">
-                <h2>Certifications</h2>
-                <ul>
-                    <li><strong>Python for Data Science, AI and Development:(</strong><a href="https://www.coursera.org/account/accomplishments/verify/4H87F8QAN2U6" target="_blank">View Certificate</a>) - Coursera - November 2023</li>
-                </ul>
-                <ul>
-                    <li><strong>Introduction to Cloud Computing:(</strong><a href="https://www.coursera.org/account/accomplishments/verify/QHC897ZFYG2W" target="_blank">View Certificate</a>) - Coursera - December 2023</li>
-                </ul>
-                <ul>
-                    <li><strong>Build Deep Learning Models with Tensor Flow:(</strong><a href="https://www.codecademy.com/profiles/mabogee03/certificates/5f85c4b9c431a800138a60e0" target="_blank">View Certificate</a>) - Codecademy - September 2024</li>
-                </ul>
-                <ul>
-                    <li><strong>Learn Javascript:(</strong><a href="https://www.codecademy.com/profiles/mabogee03/certificates/705dcb15de0da4dd9d9fc4f3274b430e" target="_blank">View Certificate</a>) - Codecademy - July 2024</li>
-                </ul>
-            </section>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
         </div>
 
-        <script>
-            function toggleMenu() {
-                document.body.classList.toggle('menu-active');
-            }
-    
-            function showEmail() {
-                alert("Email: mabo.giqwa.cs@gmail.com");
-            }
-        </script>
-    </body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="articles.html">Blog</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="section" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Python, C++, Java, HTML, CSS, Octave</li>
+                <li>Frameworks: TensorFlow, Keras, React, Qt</li>
+                <li>Mathematics: Linear Algebra, Calculus, Discrete Math</li>
+                <li>AI/ML Concepts: Supervised Learning, Neural Networks, Deep Learning</li>
+            </ul>
+        </div>
+
+        <div class="section" id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor of Science in Mathematics and Computer Science - UNISA</li>
+                <li>High School - Grade 12, Langenhoven High School</li>
+            </ul>
+        </div>
+
+        <div class="section" id="courses">
+            <h2>Completed Courses</h2>
+            <ul>
+                <li>COS1511: Introduction to Programming I (C++)</li>
+                <li>COS1512: Introduction to Programming II (C++)</li>
+                <li>COS1521: Computer System Fundamentals</li>
+                <li>COS1501: Theoretical Computer Science I</li>
+                <li>MAT1503: Linear Algebra I</li>
+                <li>EUP1501: Ethical Information and Communication Tech</li>
+                <li>MAT1512: Calculus A</li>
+                <li>MAT1613: Calculus B</li>
+                <li>APM2611: Differential Equations</li>
+                <li>APM2613: Numerical Methods I</li>
+                <li>COS2601: Theoretical Computer Science II</li>
+                <li>COS2611: Data Structures and Algorithms</li>
+                <li>COS2661: Formal Logic II</li>
+                <li>COS2614: Programming: Application Development</li>
+                <li>MAT2611: Linear Algebra II</li>
+                <li>MAT2612: Introduction to Discrete Mathematics</li>
+                <li>MAT2615: Multivariable Calculus</li>
+                <li>PLS2607: Philosophy of Science</li>
+                <li>APM3706: Ordinary Differential Equations</li>
+                <li>APM3711: Numerical Methods II</li>
+                <li>COS3701: Theoretical Computer Science III</li>
+                <li>COS3721: Operating Systems and Architecture</li>
+                <li>COS3761: Formal Logic III</li>
+            </ul>
+        </div>
+
+        <div class="section" id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/account/accomplishments/verify/MEU9F5CCHXSH" target="_blank">Supervised Machine Learning - Coursera</a></li>
+                <li><a href="" target="_blank">AWS Cloud Practitioner Essentials - Amazon</a></li>
+                <li><a href="https://www.coursera.org/account/accomplishments/verify/4H87F8QAN2U6" target="_blank">Python for Data Science, AI & Development - Coursera</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Stay curious, stay inspired</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+
+        function showEmail() {
+            alert("Email: mabogiqwa1@gmail.com");
+        }
+    </script>
+</body>
 </html>
