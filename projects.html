@@ -1,197 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styleProject.css">
+</head>
+<body>
+    <div class="ps-symbols" id="psSymbols"></div>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <header>
+        <div class="contact-info" onclick="showEmail()">Contact Information</div>
 
-        <style>
-            @keyframes gradientBackground {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
 
-            body {
-                background: linear-gradient(270deg, #2B2B87, #060653, #88d3ce);
-                background-size: 600%, 600%;
-                animation: gradientBackground 15s ease infinite;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-family: Arial, sans-serif;
-                color: #e2e1e1;
-            }
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
 
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.5);
-                box-sizing: border-box;
-                z-index: 10;
-            }
-
-            footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-                font-size: 18px;
-                color: #e2e1e1;
-                background-color: rgba(0, 0, 0, 0.5); /* Optional: background color */
-            }
-
-            header div.contact-info {
-                font-size: 18px;
-                color: #e2e1e1;
-                cursor: pointer;
-            }
-
-            header div.contact-info:hover {
-                text-decoration: underline;
-            }
-
-            header nav {
-                display: flex;
-                gap: 20px;
-            }
-
-            header nav a {
-                color: #e2e1e1;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            header nav a:hover {
-                color: #ccc;
-                text-decoration: underline;
-            }
-
-            .hamburger {
-                display: none;
-                font-size: 30px;
-                color: #e2e1e1;
-                cursor: pointer;
-                position: absolute;
-                right: 20px;
-                top: 20px;
-            }
-
-            .table-of-contents ul ul {
-                padding-left: 20px;
-            }
-
-            .container {
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                padding-left: 20px;
-                text-align: left;
-                position: relative;
-                top: 590px;
-            }
-
-            #skills ul {
-                padding-left: 20px;
-            }
-
-            #skills li {
-                margin-bottom: 10px;
-            }
-
-            #education ul {
-                padding-left: 20px;
-            }
-
-            #education li {
-                margin-bottom: 10px;
-            }
-
-            .courses {
-                list-style-type: none;
-                padding-left: 20px;
-            }
-
-            .courses > li {
-                margin-bottom: 20px;
-            }
-
-            .course-list {
-                list-style-type: circle;
-                margin-left: 20px;
-            }
-
-            .course-list li {
-                margin: 10px;
-            }
-
-            @media (max-width: 768px) {
-                header nav {
-                    display: none;
-                }
-
-                .hamburger {
-                    display: block;
-                }
-
-                .menu-active nav {
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 60px;
-                    right: 20px;
-                    background-color: #060653;
-                    padding: 10px;
-                    border-radius: 5px;
-                    gap: 10px;
-                }
-
-                .menu-active nav a {
-                    margin: 10px 0;
-                }
-
-                body {
-                    padding-top: 80px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="contact-info" onclick="showEmail()">Contact Information</div>
-    
-            <!-- Hamburger menu icon -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+    <div class="container">
+        <div class="project-card">
+            <img src="images/inventory-app-icon.png" alt="Inventory management desktop app" class="project-icon">
+            <div class="project-content">
+                <h2 class="project-title">Stock Editor</h2>
+                <p class="project-description">
+                    Stock Editor is a desktop inventory management application built with Qt/C++ that provides businesses with a streamlined solution for product tracking and stock control. 
+                    The application features an intuitive interface for managing product details including barcodes, descriptions, stock levels, and pricing. Users can easily import and export 
+                    inventory data, modify existing items, and track stock levels through a clean tabulated display. Built with modern C++ and the Qt framework, Stock Editor demonstrates robust software 
+                    engineering principles while maintaining a user-friendly experience through its toolbar-based navigation and responsive layout. The application combines efficient data management with a professional 
+                    interface, making inventory control accessible and reliable for business users.
+                </p>
+                <a href="https://github.com/mabogiqwa/qt_projects/tree/main/qt_stock_management_gui" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
             </div>
-    
-            <nav>
-                <a href="index.html">Home Page</a>
-                <a href="about.html">About</a>
-                <a href="articles.html">Blog</a>
-                <a href="projects.html">Projects</a>
-            </nav>
-        </header>
-        <p>Coming soon...</p>
+        </div>
+    </div>
 
-        <script>
-            function toggleMenu() {
-                document.body.classList.toggle('menu-active');
-            }
-    
-            function showEmail() {
-                alert("Email: mabo.giqwa.cs@gmail.com");
-            }
-        </script>
-    </body>
+    <div class="container">
+        <div class="project-card">
+            <img src="images/chess board.webp" alt="Chess Game" class="project-icon">
+            <div class="project-content">
+                <h2 class="project-title">Chess Game with AI</h2>
+                <p class="project-description">
+                    This is a web-based chess game that features an AI opponent powered by multiple search algorithms including an optimized Minimax algorithm with alpha-beta pruning. The application offers a responsive design that works across different devices.
+                    HTML5 was used for the structure of the web application, CSS3 was used for styling and responsive design, and Javascript was used for game logic and AI implementation.
+                </p>
+                <a href="https://github.com/mabogiqwa/chess-engine-js" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="project-card">
+            <img src="images/to-do-app-icon.png" alt="To-do list desktop app" class="project-icon">
+            <div class="project-content">
+                <h2 class="project-title">To-do list application</h2>
+                <p class="project-description">
+                    The To-Do List Application is a sleek task management desktop software built with Qt framework and C++, 
+                    featuring a dark-themed interface with sidebar navigation and a nature-themed background. The application 
+                    offers visual task management with animated task completion effects, organized into categories like "My Day," "Important," "Tasks," and "Groceries." 
+                    Users can input tasks using natural language, search for specific items, and mark tasks as complete with a satisfying fade-out animation. The responsive design 
+                    adapts to different window sizes through a split-pane layout, while the technical implementation includes custom widgets, smooth animations, and consistent styling. 
+                    For day-to-day use, the application provides a visually pleasing environment for organizing responsibilities, setting priorities, and tracking completed tasks, making it an effective 
+                    tool for personal productivity management.
+                </p>
+                <a href="https://github.com/mabogiqwa/Qt-To-Do-List-Application" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="project-card">
+            <img src="images/map image.gif" alt="distance calculator" class="project-icon">
+            <div class="project-content">
+                <h2 class="project-title">Gauteng locations distance calculator</h2>
+                <p class="project-description">
+                    This C++ program implements a graph-based system to find the shortest path between locations in Gauteng, South Africa, using Dijkstra's algorithm. 
+                    The program defines a graph with 103 nodes, each representing a location, and edges representing the distances between them. The Node structure is used to create a linked list for each node, 
+                    representing its connections to other nodes. The create_gauteng_graph function initializes the graph with predefined connections and distances. Users input a start and end location, and the program 
+                    calculates the shortest path using the dijkstra function, which returns the shortest distances and the previous node for each node in the path. The reconstruct_path function is used to trace back the shortest 
+                    path from the end node to the start node, and the print_shortest_path function displays the path and its total distance. The program also maps node indices to location names for user-friendly output. This program 
+                    could be used for applications such as route planning, navigation systems, or educational tools to demonstrate graph algorithms.
+                </p>
+                <a href="https://github.com/mabogiqwa/gauteng-undirected-graph" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Stay curious, stay inspired
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
