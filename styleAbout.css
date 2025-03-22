@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle, #002244, #000);  /* Adjusted gradient to match home page */
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+        /* PlayStation symbols background */
+        .ps-symbols {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            transform: translateZ(0); /* Add hardware acceleration */
+        }
+
+        .symbol {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.07);
+            font-size: 20px; /* Reduced size for mobile */
+            animation: float 20s infinite linear;
+            will-change: transform, opacity; /* Performance optimization */
+        }
+
+        .triangle:after { content: "△"; }
+        .circle:after { content: "○"; }
+        .cross:after { content: "✕"; }
+        .square:after { content: "▢"; }
+
+        @media (max-width: 768px) {
+            .symbol {
+                font-size: 15px; /* Even smaller on mobile */
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.02;
+            }
+            50% {
+                opacity: 0.08;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.02;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 15px rgba(0, 102, 255, 0.5);
+        }
+
+        .contact-info {
+            cursor: pointer;
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .contact-info:hover {
+            color: #fff;
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav a {
+            color: #bbb;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #00aaff;
+            text-shadow: 0px 0px 8px #00aaff;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #bbb;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .menu-active nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 15px;
+                border-radius: 5px;
+                gap: 10px;
+            }
+        }
+
+        .content {
+            padding: 120px 40px 100px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section li {
+            margin-bottom: 15px;
+            color: #bbb;
+            font-weight: 300;
+        }
+
+        .section a {
+            color: #4e73df;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .section a:hover {
+            color: #fff;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: #bbb;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0px 0px 15px rgba(0, 102, 255, 0.5);
+        }
+
+        #courses ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 0;
+        }
+        
+        #courses li {
+            margin-bottom: 5px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 60px;
+        }
+
+        .section li strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .section li p {
+            margin: 5px 0 15px 0;
+            line-height: 1.6;
+        }
